@@ -7,11 +7,10 @@ def solve(numbers):
 
     idx = len(numbers) - 1
     next_number = numbers[-1]
+    zero_count = 0
 
     while idx < 30000000:
         number = next_number
-        if number == 0:
-            print("zero")
 
         if number in record:
             next_number = idx - record[number]
@@ -32,13 +31,6 @@ def warmup(numbers, record):
 
 
 def main():
-    # assert solve([0, 3, 6]) == 436
-    # assert solve([1, 3, 2]) == 1
-    # assert solve([2, 1, 3]) == 10
-    # assert solve([1, 2, 3]) == 27
-    # assert solve([2, 3, 1]) == 78
-    # assert solve([3, 2, 1]) == 438
-    # assert solve([3, 1, 2]) == 1836
     print(solve([7, 12, 1, 0, 16, 2]))
 
 
