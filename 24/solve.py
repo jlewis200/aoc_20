@@ -38,7 +38,7 @@ def get_delta(direction):
 
 def solve(instructions):
     """
-    Treat the hexagonal grid as a 2-d regular grid by considering single
+    Treat the hexagonal grid as a 2-d square grid by considering single
     direction instruction to increment by 2 and mixed direction instructions
     as 1, 1.
 
@@ -51,6 +51,9 @@ def solve(instructions):
         sw: y += 1, x -= 1
         ne: y -= 1, x += 1
         nw: y -= 1, x -= 1
+
+    Get the coordinate specified by the instruction.  If it's not in the list
+    of black tiles, add it.  If it is in the list of black tiles, remove it.
     """
     coords = set()
 
